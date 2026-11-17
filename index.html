@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: items marked "EDIT" still need your details -->
+  <title>Chukwunonye Ejekam — Frontend Developer</title>
+  <meta name="description" content="Portfolio of Chukwunonye Ejekam, a frontend developer building practical web apps for Nigerian users.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CE</span>
+        <span>Chukwunonye Ejekam</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-top">
+          <span class="label">Portfolio — 2026</span>
+          <span class="label">Lagos, Nigeria · Open to internships</span><!-- EDIT -->
+        </div>
+        <h1 id="hero-title">I build web apps for <em>everyday</em> <span class="hl">Nigerian problems.</span></h1>
+        <p class="hero-lede">Rent, roommates, groceries, delivery riders — I like turning the small daily hassles of city life into interfaces that just work, on any phone.</p>
+        <div class="hero-actions">
+          <a class="btn btn--solid" href="#projects">See my work →</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">01</span>
+          <h2 id="about-title">About me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <!-- EDIT: rewrite these paragraphs in your own words -->
+            <p>I'm Chukwunonye Ejekam, a final-year Computer Science student at Pan-Atlantic University who builds frontend web applications.</p>
+            <p>Most of my projects start from something I've seen people struggle with — finding someone trustworthy to share rent with, or ordering groceries from a nearby shop and actually knowing when the rider will arrive.</p>
+            <p>I care about interfaces that are fast on mid-range phones, readable in sunlight, and honest about what's happening behind the scenes. Right now I'm going deeper into React, state management and deploying real products.</p>
+          </div>
+          <dl class="facts">
+            <div><dt>Who</dt><dd>Chukwunonye Ejekam — CS student, Pan-Atlantic University</dd></div>
+            <div><dt>What I do</dt><dd>Frontend development: responsive layouts, interactive UIs, deploying to the web</dd></div>
+            <div><dt>Focus</dt><dd>Marketplace and logistics apps for local users</dd></div>
+            <div>
+              <dt>Toolkit</dt>
+              <dd>
+                <ul class="tags">
+                  <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+                  <li>Git &amp; GitHub</li><li>Vercel</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-num">02</span>
+          <h2 id="projects-title">Selected projects</h2>
+        </div>
+
+        <ol class="project-list">
+          <!-- Project 1: Breeze (has its own details page) -->
+          <li class="project">
+            <span class="project-no">01</span>
+            <div>
+              <h3>Breeze</h3>
+              <span class="label project-kind">Shop &amp; delivery web app</span>
+              <p>A grocery and convenience ordering app for Abuja with three roles in one: customers order from nearby shops, shop owners manage stock and orders, and riders accept deliveries. Orders are auto-assigned to the rider with the fastest estimated arrival.</p>
+              <ul class="tags">
+                <li>React 18</li><li>JavaScript</li><li>CSS variables</li><li>Google Maps API</li><li>localStorage</li>
+              </ul>
+              <div class="project-links">
+                <a class="text-link" href="breeze.html">Case study →</a>
+                <a class="text-link" href="projects/breeze/index.html" target="_blank" rel="noopener">Live app ↗</a>
+              </div>
+            </div>
+            <figure class="project-shot">
+              <img src="assets/img/breeze-home.jpg" alt="Breeze home screen showing a search bar and a grid of nearby shops" loading="lazy" width="1600" height="1000">
+              <figcaption>Breeze · customer home</figcaption>
+            </figure>
+          </li>
+
+          <!-- Project 2: BunkShare -->
+          <li class="project">
+            <span class="project-no">02</span>
+            <div>
+              <h3>BunkShare</h3>
+              <span class="label project-kind">Roommate matching platform</span>
+              <p>Helps Nigerians find compatible roommates, discover verified shared rentals and split rent fairly — matching people on lifestyle, budget and location.</p>
+              <ul class="tags">
+                <!-- EDIT: add "TypeScript" here if you wrote it in TypeScript -->
+                <li>React 19</li><li>Vite</li><li>Tailwind CSS</li><li>Framer Motion</li>
+                <li>Zustand</li><li>TanStack Query</li><li>React Hook Form + Zod</li><li>Vercel</li>
+              </ul>
+              <div class="project-links">
+                <a class="text-link" href="https://bunkshare-frontend-l4f9.vercel.app/" target="_blank" rel="noopener">Live site ↗</a>
+              </div>
+            </div>
+            <figure class="project-shot">
+              <img src="assets/img/bunkshare.jpg" alt="BunkShare listings page with a search bar and two rental listings in Ikeja and Lekki, Lagos" loading="lazy" width="1680" height="1050">
+              <figcaption>BunkShare · landing page</figcaption>
+            </figure>
+          </li>
+
+          <!-- Project 3: this site -->
+          <li class="project">
+            <span class="project-no">03</span>
+            <div>
+              <h3>This portfolio</h3>
+              <span class="label project-kind">Hand-coded static site</span>
+              <p>Designed and built from scratch with no framework: semantic HTML, a single stylesheet using CSS variables, grid and flexbox, and a few lines of JavaScript for the mobile menu and copy-to-clipboard.</p>
+              <ul class="tags">
+                <li>HTML5</li><li>CSS Grid</li><li>Flexbox</li><li>Vanilla JS</li>
+              </ul>
+              <div class="project-links">
+                <!-- EDIT: your GitHub repo URL -->
+                <a class="text-link" href="https://github.com/YOUR-USERNAME/portfolio" target="_blank" rel="noopener">Source code ↗</a>
+              </div>
+            </div>
+            <figure class="project-shot">
+              <img src="assets/img/portfolio.jpg" alt="The homepage of this portfolio" loading="lazy" width="1600" height="1000">
+              <figcaption>Portfolio · homepage</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <span class="section-num">03</span>
+        <h2 id="contact-title">Got a project? Let's talk.</h2>
+        <p>I'm open to internships, freelance builds and collaborations. The fastest way to reach me is email or WhatsApp.</p>
+        <div class="cta-actions">
+          <a class="btn btn--dark" href="mailto:ejekamchukwunonye@gmail.com?subject=Hello%20from%20your%20portfolio">Email me</a>
+          <a class="btn" href="https://wa.me/2349167227657?text=Hi%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">WhatsApp</a>
+          <button class="btn" type="button" id="copy-email" data-email="ejekamchukwunonye@gmail.com">Copy email</button>
+          <span class="copy-note" id="copy-note" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="label">© <span id="year">2026</span> Chukwunonye Ejekam</span>
+      <span class="label">Hand-coded · HTML / CSS / JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

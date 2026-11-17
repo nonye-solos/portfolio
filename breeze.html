@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breeze — Case study · Chukwunonye Ejekam</title>
+  <meta name="description" content="Case study: Breeze, a three-role shop and delivery web app built with React.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">CE</span>
+        <span>Chukwunonye Ejekam</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#projects" aria-current="page">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <nav class="crumbs label" aria-label="Breadcrumb">
+        <a href="index.html#projects">Projects</a> / Breeze
+      </nav>
+    </div>
+
+    <!-- HERO + QUICK SPEC -->
+    <section class="detail-hero" aria-labelledby="detail-title">
+      <div class="wrap">
+        <span class="label">Case study · Project 01</span>
+        <h1 id="detail-title">Breeze</h1>
+        <p class="hero-lede">One web app, three jobs: customers order from shops in their zone, shop owners run their stock, and riders get matched to deliveries by fastest estimated arrival.</p>
+        <div class="hero-actions" style="margin-bottom:40px">
+          <a class="btn btn--solid" href="projects/breeze/index.html" target="_blank" rel="noopener">Open live app ↗</a>
+          <a class="btn" href="#features">Jump to features</a>
+        </div>
+        <dl class="spec">
+          <div><dt>Role</dt><dd>Solo — design &amp; build</dd></div>
+          <div><dt>Type</dt><dd>Single-page web app</dd></div>
+          <div><dt>Users</dt><dd>Customer · Shop owner · Rider</dd></div>
+          <div><dt>Built with</dt><dd>React 18, CSS, JS</dd></div>
+        </dl>
+        <figure class="project-shot lead-shot">
+          <img src="assets/img/breeze-menu.jpg" alt="Breeze shop menu with items grouped by category and a cart panel on the right" width="1600" height="1000">
+          <figcaption>Shop menu with live cart (desktop)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <!-- 1. FULL DESCRIPTION -->
+      <section class="chapter" aria-labelledby="desc-title">
+        <header><span class="section-num">01</span><h2 id="desc-title">Full description</h2></header>
+        <div class="chapter-body">
+          <p>Breeze is a quick-commerce web app modelled on shops in Abuja (Wuse, Garki, Maitama and Kubwa). A customer picks a nearby shop, fills a cart, chooses a delivery address on a map and a payment option, and then follows the order through five stages, from "Order placed" to "Delivered".</p>
+          <p>The same app serves two other users. A <strong>shop owner</strong> sees revenue, orders and low-stock alerts, and can add, edit or remove products. A <strong>rider</strong> goes online, accepts or declines incoming orders and marks them delivered.</p>
+          <p>Breeze runs entirely in the browser. There is no server yet: data is stored in the browser's <code>localStorage</code>, payments are not actually processed, and order tracking is simulated with timers. It is built to demonstrate the full user flow and the dispatch logic, ready to be connected to a real backend.</p>
+        </div>
+      </section>
+
+      <!-- 2. PROBLEM -->
+      <section class="chapter" aria-labelledby="problem-title">
+        <header><span class="section-num">02</span><h2 id="problem-title">The problem</h2></header>
+        <div class="chapter-body">
+          <!-- EDIT: make this your own story — why did YOU build Breeze? -->
+          <p>Neighbourhood shops often run delivery through phone calls and WhatsApp messages. The customer doesn't know whether an item is in stock, how much delivery costs, or when the rider will arrive. The shop owner has no simple view of stock or orders, and riders get assigned by whoever answers first rather than whoever is closest.</p>
+          <p>Breeze puts all three sides in one place. Customers see stock and fees upfront, shop owners see what's selling and running low, and every order goes to the rider who can deliver it fastest.</p>
+          <h3>How the rider gets picked</h3>
+          <pre class="formula">ETA = shop prep time + (rider → shop) + (shop → customer)</pre>
+          <p>Riders in the shop's zone are shortlisted first (falling back to all riders if none are in the zone). Travel times assume an average speed of 25 km/h, and the rider with the lowest total ETA is assigned.</p>
+        </div>
+      </section>
+
+      <!-- 3. FEATURES -->
+      <section class="chapter" id="features" aria-labelledby="features-title">
+        <header><span class="section-num">03</span><h2 id="features-title">Features</h2></header>
+        <div class="chapter-body">
+          <ul class="feature-list">
+            <li><div><strong>Three roles, one login screen</strong>Sign in as customer, shop owner or rider, with one-tap demo accounts and form validation (including Nigerian phone numbers).</div></li>
+            <li><div><strong>Search and filter shops</strong>Search finds shops by name or by any product they stock; category chips narrow the list; closed shops show opening hours instead of a menu.</div></li>
+            <li><div><strong>Stock-aware cart</strong>"Only 3 left" warnings, out-of-stock items disabled, quantities capped at available stock, and a prompt if you try to mix shops in one cart.</div></li>
+            <li><div><strong>Mobile-first cart</strong>A sidebar cart on desktop becomes a floating button and slide-up drawer on phones.</div></li>
+            <li><div><strong>3-step checkout with a map</strong>Delivery, payment and review steps; address search with Google Places (restricted to Nigeria), a draggable pin and reverse geocoding.</div></li>
+            <li><div><strong>Automatic rider dispatch</strong>The fastest-ETA rider in the shop's zone is assigned when the order is placed.</div></li>
+            <li><div><strong>Order tracking and reorder</strong>A five-stage tracker with a moving rider marker, plus one-tap reorder that re-checks what's still in stock.</div></li>
+            <li><div><strong>Shop owner dashboard</strong>Revenue, low-stock alerts, product add/edit/delete, an orders table with filters, and shop settings.</div></li>
+            <li><div><strong>Rider view</strong>Online/offline toggle, accept or decline orders, and delivery and earnings counts.</div></li>
+            <li><div><strong>Remembers your session</strong>Cart, orders and products persist across page reloads; dark mode follows the device setting.</div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. SCREENSHOTS -->
+      <section class="chapter" aria-labelledby="shots-title">
+        <header><span class="section-num">04</span><h2 id="shots-title">Screenshots</h2></header>
+        <div class="chapter-body">
+          <div class="gallery">
+            <figure class="project-shot tall">
+              <img src="assets/img/breeze-mobile.jpg" alt="Breeze customer home screen on a mobile phone with bottom navigation" loading="lazy" width="780" height="1688">
+              <figcaption>Customer home · mobile</figcaption>
+            </figure>
+            <figure class="project-shot">
+              <img src="assets/img/breeze-login.jpg" alt="Breeze sign-in screen with demo buttons for customer, shop owner and rider" loading="lazy" width="1600" height="1000">
+              <figcaption>Sign in · three roles</figcaption>
+            </figure>
+            <figure class="project-shot">
+              <img src="assets/img/breeze-dashboard.jpg" alt="Shop owner dashboard with revenue stats, a weekly revenue chart and recent orders" loading="lazy" width="1600" height="1000">
+              <figcaption>Shop owner dashboard</figcaption>
+            </figure>
+            <figure class="project-shot">
+              <img src="assets/img/breeze-zones.jpg" alt="Zones and ETA page explaining the dispatch steps and listing riders with their ETAs" loading="lazy" width="1600" height="1000">
+              <figcaption>Dispatch logic, explained in-app</figcaption>
+            </figure>
+            <figure class="project-shot">
+              <img src="assets/img/breeze-rider.jpg" alt="Rider dashboard with an online toggle and delivery, earnings and rating stats" loading="lazy" width="1600" height="1000">
+              <figcaption>Rider view</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. TECHNOLOGIES -->
+      <section class="chapter" aria-labelledby="tech-title">
+        <header><span class="section-num">05</span><h2 id="tech-title">Technologies used</h2></header>
+        <div class="chapter-body">
+          <table class="tech-table">
+            <tbody>
+              <tr><th scope="row">React 18</th><td>Components and hooks (useState, useEffect, useMemo, useRef), plus Context for one shared store.</td></tr>
+              <tr><th scope="row">Babel (in-browser)</th><td>Compiles JSX directly in the page, so the whole app ships as one HTML file.</td></tr>
+              <tr><th scope="row">CSS</th><td>Custom properties for theming and dark mode, Grid and Flexbox layouts, and a 760px breakpoint for mobile.</td></tr>
+              <tr><th scope="row">Google Maps JavaScript API</th><td>Map, draggable marker, Places Autocomplete and Geocoder for the delivery address.</td></tr>
+              <tr><th scope="row">localStorage</th><td>Persists the user, cart, products and orders between visits.</td></tr>
+              <tr><th scope="row">Tabler Icons</th><td>Icon webfont used across the interface.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. WHAT I LEARNED -->
+      <section class="chapter" aria-labelledby="learned-title">
+        <header><span class="section-num">06</span><h2 id="learned-title">What I learned</h2></header>
+        <div class="chapter-body">
+          <!-- EDIT: these are drafts based on the code. Keep the ones that are true for you and rewrite them in your own words. -->
+          <ul class="lessons">
+            <li><strong>Hooks have rules.</strong> My checkout page crashed until I moved every hook above the "cart is empty" early return. React needs hooks called in the same order on every render.</li>
+            <li><strong>Snapshot state before you change it.</strong> When placing an order, I copy the cart first, then reduce stock and clear the cart. Reading the cart after clearing it gave the wrong totals.</li>
+            <li><strong>Where you define a component matters.</strong> Defining the cart and item-form components inside their parents made inputs lose focus on every keystroke. Moving them to the top level fixed it.</li>
+            <li><strong>Never trust saved data.</strong> localStorage can hold old or broken values, so the loader checks the shape of what it reads and falls back to defaults.</li>
+            <li><strong>Clean up timers.</strong> The order tracker uses timeouts; clearing them when the page unmounts stopped updates firing on screens that no longer existed.</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="next-up">
+        <a class="btn" href="index.html#projects">← All projects</a>
+        <a class="btn btn--solid" href="index.html#contact">Work with me →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="label">© <span id="year">2026</span> Chukwunonye Ejekam</span>
+      <span class="label">Hand-coded · HTML / CSS / JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
